@@ -1,0 +1,21 @@
+{
+  "name": "knowyourcars-server",
+  "version": "1.0.0",
+  "description": "Making hello world. Let's see this on render!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannycruzga/knowyourcars-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dannycruzga/knowyourcars-server/issues"
+  },
+  "homepage": "https://github.com/dannycruzga/knowyourcars-server#readme"
+}
