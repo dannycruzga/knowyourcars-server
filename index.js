@@ -16,3 +16,10 @@ const storage = multer.diskStorage({
   });
   
 const upload = multer({ storage: storage });
+
+/**example
+ * let house {
+ * }
+ */
+
+app.listen(3001)
