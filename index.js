@@ -18,43 +18,79 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 let cars = [
-    {
-        "_id": 1,
-        "brand": "Ford",
-        "model": "Mustang",
-        "year": 2025,
-        "price": "$32,000",
-        "type": "Sports Car",
-        "main_image": "mustang.jpg"
-    },
-    {
-        "_id": 2,
-        "brand": "Ford",
-        "model": "F-150",
-        "year": 2025,
-        "price": "$38,000",
-        "type": "Pickup Truck",
-        "main_image": "f150.jpg"
-    },
-    {
-        "_id": 3,
-        "brand": "Chevrolet",
-        "model": "Corvette",
-        "year": 2025,
-        "price": "$68,000",
-        "type": "Sports Car",
-        "main_image": "corvette.jpeg"
-    },
-    {
-        "_id": 4,
-        "brand": "Chevrolet",
-        "model": "Camaro",
-        "year": 2025,
-        "price": "$32,000",
-        "type": "Sports Car",
-        "main_image": "camaro.jpg"
-    },
-]
+  {
+    _id: 1,
+    brand: "Ford",
+    model: "Mustang",
+    year: 2025,
+    price: "$32,000",
+    type: "Sports Car",
+    main_image: "images/mustang.jpg",
+  },
+  {
+    _id: 2,
+    brand: "Ford",
+    model: "F-150",
+    year: 2025,
+    price: "$38,000",
+    type: "Pickup Truck",
+    main_image: "images/f150.jpg",
+  },
+  {
+    _id: 3,
+    brand: "Chevrolet",
+    model: "Corvette",
+    year: 2025,
+    price: "$68,000",
+    type: "Sports Car",
+    main_image: "images/corvette.jpeg",
+  },
+  {
+    _id: 4,
+    brand: "Chevrolet",
+    model: "Camaro",
+    year: 2025,
+    price: "$32,000",
+    type: "Sports Car",
+    main_image: "images/camaro.jpg",
+  },
+  {
+    _id: 5,
+    brand: "Dodge",
+    model: "Charger",
+    year: 2025,
+    price: "$60,000",
+    type: "Muscle Car",
+    main_image: "images/charger.jpg",
+  },
+  {
+    _id: 6,
+    brand: "Dodge",
+    model: "Durango",
+    year: 2025,
+    price: "$42,000",
+    type: "SUV",
+    main_image: "images/durango.jpg",
+  },
+  {
+    _id: 7,
+    brand: "Mercedes-Benz",
+    model: "C-Class",
+    year: 2025,
+    price: "$48,000",
+    type: "Sedan",
+    main_image: "images/cclass.jpg",
+  },
+  {
+    _id: 8,
+    brand: "Mercedes-Benz",
+    model: "G-Class",
+    year: 2025,
+    price: "$149,000",
+    type: "SUV",
+    main_image: "images/gclass.jpg",
+  },
+];
 
 app.get("/api/cars", (req, res) => {
     res.send(cars);
