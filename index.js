@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
+const Joi = require("joi");
 const app = express();
 app.use(express.static("public"));
 app.use(express.json());
@@ -96,6 +97,46 @@ app.get("/api/cars", (req, res) => {
     res.send(cars);
 });
 
+const validateCar = (car) => {
+  const schema = Joi.object(
+    {
+      brand: Joi.string().required(),
+      model: Joi.string().required(),
+      year: Joi.number().integer().required(),
+      price: Joi.string().required(),
+      type: Joi.string().required(),
+    }
+  );
+  return schema.validate(car);
+};
+
+app.post("/api/cars", upload.single("img"), (req, res) => {
+  const result = validateCar(req.body);
+
+  if (result.error) {
+    console.log("Error in validation");
+    res.status(400).send(result.error.details[0].message);
+    return;
+  }
+
+  const car = {
+    _id: cars.length + 1,
+    brand: result.value.brand,
+    model: result.value.model,
+    year: result.value.year,
+    price: result.value.price,
+    type: result.value.type,
+  };
+
+  if (req.file) {
+    car.main_image = "images/" + req.file.filename;
+  }
+
+  cars.push(car);
+
+  res.status(200).send(car);
+});
+
 app.listen(3001, () => {
-    console.log("Server is running on port 3001");
+  console.log("Server is running on port 3001");
 });
